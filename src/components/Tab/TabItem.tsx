@@ -35,7 +35,7 @@ const TabItem = ({ label, icon, index, activeIndex, onTabPress }: TabProps) => {
   useEffect(() => {
     animatedActiveIndex.value = activeIndex;
     if (activeIndex === index + 1) {
-      iconColor.value = withTiming("white");
+      iconColor.value = withTiming("black");
     } else {
       iconColor.value = withTiming("rgba(128,128,128,0.8)");
     }
