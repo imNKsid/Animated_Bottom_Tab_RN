@@ -3,7 +3,7 @@ import React from "react";
 
 const Add = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Text>Add</Text>
     </SafeAreaView>
   );
@@ -11,4 +11,11 @@ const Add = () => {
 
 export default Add;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "yellow",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

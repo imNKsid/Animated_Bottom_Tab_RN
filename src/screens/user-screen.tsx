@@ -3,7 +3,7 @@ import React from "react";
 
 const User = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Text>User</Text>
     </SafeAreaView>
   );
@@ -11,4 +11,11 @@ const User = () => {
 
 export default User;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "pink",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
