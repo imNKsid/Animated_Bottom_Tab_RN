@@ -1,0 +1,13 @@
+current directory: /Users/mac/Documents/Projects/Animated_Bottom_Tab_RN/Animated_Bottom_Tab/vendor/bundle/ruby/2.6.0/gems/json-2.7.1/ext/json
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20240106-15714-i9jhgj.rb extconf.rb
+creating Makefile
+
+current directory: /Users/mac/Documents/Projects/Animated_Bottom_Tab_RN/Animated_Bottom_Tab/vendor/bundle/ruby/2.6.0/gems/json-2.7.1/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/mac/Documents/Projects/Animated_Bottom_Tab_RN/Animated_Bottom_Tab/vendor/bundle/ruby/2.6.0/gems/json-2.7.1/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/mac/Documents/Projects/Animated_Bottom_Tab_RN/Animated_Bottom_Tab/vendor/bundle/ruby/2.6.0/gems/json-2.7.1/ext/json
+make "DESTDIR=" install
