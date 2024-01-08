@@ -25,8 +25,10 @@ export const CustomBottomTab = ({
   navigation,
 }: BottomTabBarProps) => {
   const { containerPath, curvedPaths, tHeight } = usePath();
+
   const circleXCoordinate = useSharedValue(0);
   const progress = useSharedValue(1);
+
   const handleMoveCircle = (currentPath: string) => {
     circleXCoordinate.value = getPathXCenter(currentPath);
   };

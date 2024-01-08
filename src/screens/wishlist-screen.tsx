@@ -3,7 +3,7 @@ import React from "react";
 
 const Wishlist = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Text>Wishlist</Text>
     </SafeAreaView>
   );
@@ -11,4 +11,11 @@ const Wishlist = () => {
 
 export default Wishlist;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "green",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
