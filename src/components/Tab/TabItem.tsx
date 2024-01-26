@@ -23,24 +23,39 @@ export type TabProps = {
 
 const ICON_SIZE = 25;
 const LABEL_WIDTH = SCREEN_WIDTH / 4;
-const AnimatedIcon = Animated.createAnimatedComponent(Feather);
+const AnimatedIcon = Animated.createAnimatedComponent(Feather); //Creating an animated version of the Tab icon
+//createAnimatedComponent function is used to create an animated version of a given React Native component.
+//The purpose is to enable the use of animated values and styles to drive animations in a more efficient way.
 
 const TabItem = ({ label, icon, index, activeIndex, onTabPress }: TabProps) => {
   const { curvedPaths } = usePath();
   const animatedActiveIndex = useSharedValue(activeIndex);
+  //useSharedValue provides a way to create animated values that can be shared and synchronized across the UI,
+  //enabling efficient and performant animations in a React Native app.
   const iconPosition = getPathXCenterByIndex(curvedPaths, index);
   const labelPosition = getPathXCenterByIndex(curvedPaths, index);
+  //Calculating the X positions for the icon and label based on the index.
+
+  const iconColor = useSharedValue(
+    activeIndex === index + 1 ? "white" : "rgba(128,128,128,0.8)"
+  );
 
   //Adjust Icon color for this first render
   useEffect(() => {
     animatedActiveIndex.value = activeIndex;
     if (activeIndex === index + 1) {
+      //Color of the selected icon
       iconColor.value = withTiming("black");
     } else {
+      //Color of the unselected icon
       iconColor.value = withTiming("rgba(128,128,128,0.8)");
     }
+    //withTiming is used for creating smooth timing animations, and it's commonly used
+    //when updating animated values in a React Native app.
   }, [activeIndex]);
 
+  //useAnimatedStyle is a hook that facilitates the creation of dynamic & reactive styles for animated components,
+  //providing a declarative approach to handling animations
   const tabStyle = useAnimatedStyle(() => {
     const translateY = animatedActiveIndex.value - 1 === index ? -35 : 20;
     const iconPositionX = iconPosition - index * ICON_SIZE;
@@ -63,10 +78,6 @@ const TabItem = ({ label, icon, index, activeIndex, onTabPress }: TabProps) => {
       ],
     };
   });
-
-  const iconColor = useSharedValue(
-    activeIndex === index + 1 ? "white" : "rgba(128,128,128,0.8)"
-  );
 
   const animatedIconProps = useAnimatedProps(() => ({
     color: iconColor.value,

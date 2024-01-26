@@ -52,7 +52,9 @@ export const CustomBottomTab = ({
 
   return (
     <View style={styles.tabBarContainer}>
+      {/* SVG path representing the animated background */}
       <Svg width={SCREEN_WIDTH} height={tHeight} style={styles.shadowMd}>
+        {/* This is for the whole bottom tab bar */}
         <AnimatedPath fill={"white"} animatedProps={animatedProps} />
       </Svg>
       <AnimatedCircle circleX={circleXCoordinate} />
@@ -64,6 +66,7 @@ export const CustomBottomTab = ({
           },
         ]}
       >
+        {/* Rendering individual tab items */}
         {state.routes.map((route, index) => {
           const { options } = descriptors[route.key];
           const label = options.tabBarLabel ? options.tabBarLabel : route.name;
